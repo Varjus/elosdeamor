@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 import os
 from pathlib import Path
-import django_on_heroku
+import django_on_herokupip 
 import dj_database_url
 
 on_heroku = os.getenv('ON_HEROKU', 'False')
