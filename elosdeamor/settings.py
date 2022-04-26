@@ -10,10 +10,12 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
+# bibliotecas
+
 import os
 from pathlib import Path
-import django_on_herokupip 
 import dj_database_url
+import django_on_heroku
 
 on_heroku = os.getenv('ON_HEROKU', 'False')
 if on_heroku == "True": on_heroku = True
@@ -137,7 +139,7 @@ STATICFILES_DIRS = [
 
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-django_on_heroku.settings(locals())
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
@@ -151,3 +153,5 @@ CRISPY_TEMPLATE_PACK = "bootstrap4"
 LOGIN_REDIRECT_URL = 'inicio'
 LOGOUT_REDIRECT_URL = 'login'
 LOGIN_URL = 'login'
+
+django_on_heroku.settings(locals())
